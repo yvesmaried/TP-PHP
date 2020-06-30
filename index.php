@@ -11,7 +11,11 @@ $test = simplexml_load_file('source.xml');
 var_dump($test);
 
 foreach ($test as $page) {
-    echo $page->content;
+    if ($page['id'] == 1) {
+        echo $page->menu . '</br>' . $page->title . '</br>' . $page->content . '</br></br></br></br></br></br></br></br></br></br></br>';
+    }
+    // echo $page->menu . '</br>' . $page->title . '</br>' . $page->content . '</br></br></br></br></br></br></br></br></br></br></br>';
+    var_dump($page);
 }
 
 ?>
