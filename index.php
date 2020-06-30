@@ -10,9 +10,9 @@ $test = simplexml_load_file('source.xml');
 
 var_dump($test);
 
-// $website = new SimpleXMLElement($test);
-
-// echo $website->page[0]->content[0];
+foreach ($test as $page) {
+    echo $page->content;
+}
 
 ?>
 <!DOCTYPE html>
