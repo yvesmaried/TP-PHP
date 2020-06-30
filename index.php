@@ -1,9 +1,18 @@
 <?php
-include 'source.php';
 
-$website = new SimpleXMLElement($xmlstr);
+if (function_exists('simplexml_load_file')) {     
+    echo "simpleXML functions are available.<br />\n"; 
+} else {     
+    echo "simpleXML functions are not available.<br />\n"; 
+}
 
-echo $website->page[0]->content[0];
+$test = simplexml_load_file('source.xml');
+
+var_dump($test);
+
+// $website = new SimpleXMLElement($test);
+
+// echo $website->page[0]->content[0];
 
 ?>
 <!DOCTYPE html>
