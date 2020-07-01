@@ -1,33 +1,30 @@
 <?php
 
-if (function_exists('simplexml_load_file')) {     
-    echo "simpleXML functions are available.<br />\n"; 
-} else {     
-    echo "simpleXML functions are not available.<br />\n"; 
-}
+// if (function_exists('simplexml_load_file')) {     
+//     echo "simpleXML functions are available.<br />\n"; 
+// } else {     
+//     echo "simpleXML functions are not available.<br />\n"; 
+// }
 
 $test = simplexml_load_file('source.xml');
+$regexId = '/^[1-4]$/';
+ 
+// var_dump($test->page[2]);
+// var_dump($_GET['id']);
+// echo $_GET['id'];
+// var_dump(isset($test->page[intval($_GET['id']) - 1]->content));
+// var_dump(intval('qsdd7'));
 
-var_dump($test->page[2]);
-var_dump($_GET['id']);
-echo $_GET['id'];
 
-if (isset($_GET['id']) && isset($test->page[intval($_GET['id'])]->content)) {
-    echo $test->page[intval($_GET['id'])]->content;
+if (isset($_GET['id']) && preg_match($regexId, $_GET['id'])) {
+    foreach ($test as $page) {
+        echo $page->menu . chr(10);
+        var_dump($page->menu['id']);
+    }
+    echo $test->page[intval($_GET['id']) - 1]->content;
 } else {
-    echo $test->page[0]->content;
+    echo 'Cette page n\'existe pas';
 }
-
-// echo $test->page[1]->content;
-// foreach ($test as $page) {
-    
-//     if ($page['id'] == 1) {
-//         echo $page->title . '</br>' . $page->content;
-//     }
-//     echo $page->menu . chr(10);
-//     echo $page->menu . '</br>' . $page->title . '</br>' . $page->content . '</br></br></br></br></br></br></br></br></br></br></br>';
-//     var_dump($page);
-// }
 
 ?>
 <!DOCTYPE html>

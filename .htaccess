@@ -1,4 +1,8 @@
 Options +FollowSymlinks
 RewriteEngine on
 
-RewriteRule ^([0-9]+).html$  index.php?id=$1
+RewriteRule ^([1-4]+).html$  index.php
+
+RewriteRule ^([1-4]+).html$  index.php?id=$1
+
+RewriteRule ^(.*)$ index.php [L]

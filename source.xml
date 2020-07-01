@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <website>
     <page id="1">
-        <menu>Accueil</menu>
+        <menu id="test">Accueil</menu>
         <title>Accueil - Maçonnerie Ocordo</title>
         <content><![CDATA[<h1>Maçonnerie Ocordo</h1>
 <p>Nous sommes un groupement permanent d’entreprises locales du bâtiment spécialisées dans les travaux de rénovation de maisons et de construction d’extensions horizontales ou verticales de maisons.</p>
