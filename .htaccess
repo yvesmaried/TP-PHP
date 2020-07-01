@@ -5,4 +5,4 @@ RewriteRule ^1.html$  index.php
 
 RewriteRule ^([1-4]+).html$  index.php?id=$1
 
-#RewriteRule ^(.*)$ index.php [L]
+RewriteRule ^(.*)$ index.php [L]

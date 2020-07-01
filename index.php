@@ -12,7 +12,7 @@ $regexId = '/^[1-4]$/';
 if (isset($_GET['id'])) {
     if (preg_match($regexId, $_GET['id'])) {
         foreach ($test as $page) {
-            echo '<a href="<?= $test->page[\'id\'] ?>.html">' . $page->menu . '</a>';
+            echo '<a href=" . page[\'id\'] ?>.html">' . $page->menu . '</a>';
         }
         echo $test->page[intval($_GET['id']) - 1]->content;
     } else {
