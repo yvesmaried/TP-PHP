@@ -5,4 +5,10 @@ RewriteRule ^1.html$  index.php
 
 RewriteRule ^([1-4]+).html$  index.php?id=$1
 
-RewriteRule ^(.*)$ index.php [L]
+#RewriteRule ^(.*)$ index.php
+
+#ErrorDocument 404 http://php/TP/404.html
+
+
+ErrorDocument 404 http://php/TP/error.html
+RewriteRule ^error.html$  index.php?error=$404
