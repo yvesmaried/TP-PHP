@@ -8,22 +8,22 @@
 
 $test = simplexml_load_file('source.xml');
 $regexId = '/^[1-4]$/';
- 
-// var_dump($test->page[2]);
-// var_dump($_GET['id']);
-// echo $_GET['id'];
-// var_dump(isset($test->page[intval($_GET['id']) - 1]->content));
-// var_dump(intval('qsdd7'));
 
-
-if (isset($_GET['id']) && preg_match($regexId, $_GET['id'])) {
-    foreach ($test as $page) {
-        echo $page->menu . chr(10);
-        var_dump($page->menu['id']);
-    }
-    echo $test->page[intval($_GET['id']) - 1]->content;
-} else {
+if (isset($_GET['id'])) {
+    if (preg_match($regexId, $_GET['id'])) {
+        foreach ($test as $page) {
+            echo '<a href="<?= $test->page[\'id\'] ?>.html">' . $page->menu . '</a>';
+        }
+        echo $test->page[intval($_GET['id']) - 1]->content;
+    } else {
     echo 'Cette page n\'existe pas';
+    }
+} else {
+    foreach ($test as $page) {
+        echo '<a href="<?= $page[\'id\'] ?>.html">' . $page->menu . '</a>';
+    }
+    // var_dump($test->page);
+    echo $test->page[0]->content;
 }
 
 ?>
