@@ -43,6 +43,18 @@ a {
     font-weight: bold;
  }
 
+ #iframe {
+     height: 450px;
+ }
+
+ iframe {
+     width: 100%;
+ }
+
+ input, textarea{
+     display: block;
+ }
+
  @media screen and (max-width: 576px) {
     h1, h2, h3, p, title, .img, form, ul, iframe {
         width: 90%;
